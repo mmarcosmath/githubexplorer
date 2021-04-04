@@ -6,7 +6,14 @@ export const Title = styled.h1`
   color: #3a3a3a;
   max-width: 450px;
   line-height: 56px;
-  margin-top: 80px;
+  margin-top: 40px;
+`;
+
+export const Example = styled.p`
+  font-size: 14pt;
+  color: #3a3a3a;
+  max-width: 700px;
+  margin-top: 10px;
 `;
 
 export const Logo = styled.img`
@@ -78,7 +85,8 @@ export const Repositories = styled.div`
     }
 
     div {
-      margin-left: 16px;
+      margin: 0 16px;
+      flex: 1;
 
       strong {
         font-size: 14pt;
