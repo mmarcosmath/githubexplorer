@@ -51,15 +51,13 @@ const Dashboard: React.FC = () => {
       if (newSearch.includes("/")) {
         const response = await api.get<Repository>(`repos/${newSearch}`);
         const repository = response.data;
-        setRepositories([repository]);
-        console.log(repositories);
+        setRepositories([repository, ...repositories]);
       } else {
         const response = await api.get<Repository[]>(
           `users/${newSearch}/repos`
         );
         const repository = response.data;
-        setRepositories([...repository]);
-        console.log(repositories);
+        setRepositories([...repository, ...repositories]);
       }
       setNewSearch("");
       setInputError("");
@@ -69,7 +67,7 @@ const Dashboard: React.FC = () => {
   }
   return (
     <>
-      <Logo src={logoImg} alt="GitHub Explorer"></Logo>
+      <Logo src={logoImg} alt="GitHub Explorer" />
       <Title>Explore repositórios no GitHub</Title>
       <Form hasError={!!inputError} onSubmit={handleAddRepository}>
         <input

@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 import { shade } from "polished";
 
 export const Title = styled.h1`
@@ -17,16 +17,15 @@ export const Example = styled.p`
 `;
 
 export const Error = styled.span`
-display: block;
-color: #c53030;
-margin-top: 8px;
+  display: block;
+  color: #c53030;
+  margin-top: 8px;
 `;
 export const Logo = styled.img`
   max-width: 250px;
 `;
 
-
-interface FormProps{
+interface FormProps {
   hasError: boolean;
 }
 
@@ -49,9 +48,11 @@ export const Form = styled.form<FormProps>`
     border: 2px solid #fff;
     border-right: 0;
 
-    ${(props) => props.hasError && css`
-      border-color: #c53030;
-    `}
+    ${(props) =>
+      props.hasError &&
+      css`
+        border-color: #c53030;
+      `}
     &::placeholder {
       color: #a8a8b3;
     }
